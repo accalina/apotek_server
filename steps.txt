@@ -1,0 +1,15 @@
+
+# Generate Sequelize Initial Model:
+node_modules/.bin/sequelize init
+
+# Generate User Model
+node_modules/.bin/sequelize model:create --name User --attributes name:string,email:string,password:string,userlevel:integer
+
+# Generate Supplier Model
+node_modules/.bin/sequelize model:create --name Supplier --attributes name:string,email:string,address:string,phone:string
+
+# run Migration
+node_modules/.bin/sequelize db:migrate
+
+# Create Migration (if needed)
+node_modules/.bin/sequelize migration:generate --name [name_of_your_migration]
