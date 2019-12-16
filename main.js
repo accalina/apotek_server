@@ -1,8 +1,7 @@
 // # Libraries
-const express = require('express')
-const bp = require('body-parser')
-const morgan = require('morgan')
-const config = require('./config')
+const express   = require('express')
+const bp        = require('body-parser')
+const morgan    = require('morgan')
 require('dotenv').config()
 
 // # Instances
@@ -17,8 +16,12 @@ app.use(express.static('static'))           // Static File Handler
 
 // # Endpoints
 app.get('/', (req, res) => {
-    res.send('Hello World!')
+    res.send({msg: "Apotek API Service"})
 })
+
+
+require('./routes/User')(app);  // User Endpoint
+require('./routes/Supplier')(app);  // Supplier Endpoint
 
 
 // # Run
