@@ -1,0 +1,9 @@
+
+# Generate Sequelize Initial Model:
+node_modules/.bin/sequelize init
+
+# Generate User Model
+node_modules/.bin/sequelize model:create --name User --attributes name:string,email:string,password:string,userlevel:integer
+
+# Commit Migration
+node_modules/.bin/sequelize migration:generate --name [name_of_your_migration]
